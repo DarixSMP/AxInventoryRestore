@@ -51,7 +51,7 @@ public class Base implements Database {
             ex.printStackTrace();
         }
 
-        final String CREATE_TABLE2 = "CREATE TABLE IF NOT EXISTS axir_reasons ( id INT(128) NOT NULL AUTO_INCREMENT, reason VARCHAR(1024) NOT NULL, PRIMARY KEY (id), UNIQUE (reason));";
+        final String CREATE_TABLE2 = "CREATE TABLE IF NOT EXISTS axir_reasons ( id INT(128) NOT NULL AUTO_INCREMENT, reason VARCHAR(768) NOT NULL, PRIMARY KEY (id), UNIQUE (reason));";
 
         try (Connection conn = getConnection(); PreparedStatement stmt = conn.prepareStatement(CREATE_TABLE2)) {
             stmt.executeUpdate();
